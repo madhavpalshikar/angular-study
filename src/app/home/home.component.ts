@@ -8,17 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   clickCounter: number = 0;
   name: string = "";
+  afuConfig = {
+    uploadAPI: {
+      url: "https://example-file-upload-api"
+    }
+  };
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  countClick(){
+  countClick(): void {
     this.clickCounter += 1;
   }
 
-  setClasses(){
-    let myClasses = {
+  setClasses() {
+    const myClasses = {
       active: this.clickCounter > 4,
       notactive: this.clickCounter <= 4,
     }
